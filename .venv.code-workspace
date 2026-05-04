@@ -1,0 +1,26 @@
+{
+	"folders": [
+		{
+			"path": "E:/semi2/.venv"
+		},
+		{
+			"path": "E:/semi2/.venv-1"
+		},
+		{
+			"path": "E:/semi2/.venv-2"
+		},
+		{
+			"path": "E:/semi2/data"
+		},
+		{
+			"path": "E:/semi2/original"
+		},
+		{
+			"path": "E:/semi2/SEMI2"
+		},
+		{
+			"path": "E:/semi2/test"
+		}
+	],
+	"settings": {}
+}
