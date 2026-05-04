@@ -2,10 +2,23 @@ import streamlit as st
 
 ##### 메인함수 #####
 def main():
-    #기본설정
+    #1.기본설정
     st.set_page_config(
         page_title="음성 비서 프로그램",
         layout="wide")
+    
+    #session state 초기화
+    if "chat" not in st.session_state:
+        st.session_state["chat"]=[]
+    
+    if "OPENAI_API"not in st.session_state:
+        st.session_state["OPENAI_API"]=""
+    
+    if "messages" not in st.session_state:
+        st.session_state["messages"] = [{"role":"system", "content":"You are a toughtful assistant. Respond to all input in 25 words and answer in korea"}]
+    
+    if "check_audio" not in st.session_state:
+        st.session_state["check_reset"] =False
     
     #제목
     st.header("음성 비서 프로그램")
@@ -25,9 +38,6 @@ def main():
     
     st.markdown("")
     
-# if __name__=="__main__":
-#      main()
-     
 #사이드바 생성
 with st.sidebar:
     
@@ -43,8 +53,23 @@ with st.sidebar:
     
     #리셋 버튼 생성
     if st.button(label="초기화"):
-        #리셋 코드 # 'pass'를 넣어 에러를 방지하거나, st.rerun()을 사용해 페이지를 새로고침합니다.
+        #리셋 코드
+        st.session_state["chat"]=[]
+        st.session_state["messages"]=[{"role":"system","content":"You are a thoughtful assistant. Respond to all input in 25 words and answer in korea"}]
+        st.session_state["check_reset"]=True
         st.rerun()
+        
+#기능 구현 공간
+col1, col2 = st.columns(2)
+with col1:
+    #왼쪽 영역 작성 
+    st.subheader("질문하기")
+    #여기에 음성 녹음이 들어갈 예정입니다. 
+    
+with col2:
+    #오른쪽 영역 작성
+    st.subheader("질문/답변")
+    
         
 if __name__=="__main__":
     main()
