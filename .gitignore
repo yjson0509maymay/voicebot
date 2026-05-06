@@ -1,3 +1,23 @@
+# 가상환경
+ch03_env/
+ch03_env311/
+
+# API 키 (절대 올리면 안 됨!)
+.env
+*.env
 API_KEY.env
+
+# 임시 파일
+input.mp3
+output.mp3
+
+# 파이썬 캐시
 __pycache__/
-.venv/
+*.pyc
+
+# 예제 파일 (올릴 필요 없음)
+ch03_gTTS_example.py
+ch03_streamlit_example.py
+ch03_voicebot.py
+ch03_whisper_example.py
+output.mp3
